@@ -1,0 +1,30 @@
+{
+  "name": "off-screen",
+  "version": "0.1.0",
+  "description": "Stealth always-on-top transparent browser",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "lint": "eslint .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.offscreen.app",
+    "productName": "off-screen",
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0",
+    "eslint": "^9.39.4",
+    "globals": "^17.5.0"
+  }
+}

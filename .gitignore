@@ -1,0 +1,14 @@
+node_modules/
+dist/
+out/
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Local state (Electron user data lives in ~/Library, not here, but just in case)
+*.local
