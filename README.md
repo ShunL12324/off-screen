@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner/header.png" width="640" alt="off-screen" />
+<img src="assets/banner/header.png" width="480" alt="off-screen" />
 
 ### A transparent, always-on-top, click-through window mirror for macOS.
 
