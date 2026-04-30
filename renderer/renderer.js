@@ -219,6 +219,12 @@ document.addEventListener("keydown", (e) => {
 });
 
 // --- Opacity ------------------------------------------------------------
+// Chrome (toolbar) has a 0.5 floor: the slider can fade the content all
+// the way out, but the toolbar must stay clickable so the user can always
+// recover. Without this floor the app appears "frozen" / invisible after
+// a low-opacity session is persisted.
+const CHROME_MIN = 0.5;
+
 function applyOpacity() {
   const v = parseInt(opacity.value, 10);
   const min = parseInt(opacity.min, 10) || 0;
@@ -226,9 +232,10 @@ function applyOpacity() {
   opacity.style.setProperty("--fill", ((v - min) / (max - min)) * 100 + "%");
   opacityVal.textContent = String(v);
   const f = v / 100;
-  document.getElementById("app").style.opacity = String(f);
-  // Chrome's rgba alpha tracks the slider so the toolbar fades with content.
-  document.documentElement.style.setProperty("--chrome-alpha", String(0.85 * f));
+  const chromeF = Math.max(CHROME_MIN, f);
+  document.getElementById("topbar").style.opacity = String(chromeF);
+  document.getElementById("stage").style.opacity = String(f);
+  document.documentElement.style.setProperty("--chrome-alpha", String(0.85 * chromeF));
 }
 
 let saveOpacityTimer = null;
