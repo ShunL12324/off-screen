@@ -74,6 +74,7 @@ function createWindow() {
     alwaysOnTop: true,
     hasShadow: false,
     backgroundColor: "#00000000",
+    icon: path.join(__dirname, "assets", "icon.icns"),
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,

@@ -6,14 +6,16 @@
   "scripts": {
     "start": "electron .",
     "lint": "eslint .",
-    "dist": "electron-builder"
+    "icon": "bash scripts/build-icon.sh",
+    "dist": "npm run icon && electron-builder"
   },
   "build": {
     "appId": "com.offscreen.app",
     "productName": "off-screen",
     "mac": {
       "target": "dmg",
-      "category": "public.app-category.utilities"
+      "category": "public.app-category.utilities",
+      "icon": "assets/icon.icns"
     },
     "files": [
       "main.js",

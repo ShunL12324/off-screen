@@ -2,6 +2,10 @@ node_modules/
 dist/
 out/
 
+# Icon build artifacts (regenerated from assets/icon.svg)
+assets/icon.iconset/
+assets/icon-preview.png
+
 # Logs
 *.log
 
