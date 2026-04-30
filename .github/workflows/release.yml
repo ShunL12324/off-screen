@@ -19,9 +19,6 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install librsvg (for icon generation)
-        run: brew install librsvg
-
       - name: Install dependencies
         run: npm ci
 

@@ -1,6 +1,6 @@
 {
   "name": "off-screen",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Stealth always-on-top transparent browser",
   "main": "main.js",
   "scripts": {
